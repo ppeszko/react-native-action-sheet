@@ -1,6 +1,13 @@
-declare module '@yfuks/react-native-action-sheet' {
-  import { ActionSheetIOSStatic } from 'react-native'
+declare module "react-native-action-sheet" {
+  import { ActionSheetIOSOptions } from "react-native";
 
-  const ActionSheetIOS: ActionSheetIOSStatic
-  export default ActionSheetIOS
+  interface ActionSheet {
+    showActionSheetWithOptions: (
+      options: ActionSheetIOSOptions,
+      callback: (buttonIndex: number) => void
+    ) => void;
+  }
+
+  var ActionSheet: ActionSheet;
+  export default ActionSheet;
 }
